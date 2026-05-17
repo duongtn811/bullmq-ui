@@ -58,15 +58,15 @@ ARG BULLSTUDIO_USERNAME
 ARG BULLSTUDIO_PASSWORD
 
 ENV NODE_ENV=production \
-    PORT=3001 \
+    PORT=4000 \
     HOST=0.0.0.0 \
     REDIS_URL=$REDIS_URL \
     BULLMQ_USERNAME=$BULLSTUDIO_USERNAME \
     BULLMQ_PASSWORD=$BULLSTUDIO_PASSWORD
 
-EXPOSE 3001
+EXPOSE 4000
 
 HEALTHCHECK --interval=15s --timeout=5s --start-period=10s \
-  CMD wget -qO- http://localhost:3001/health || exit 1
+  CMD wget -qO- http://localhost:4000/health || exit 1
 
 CMD ["bun", "run", "server/dist/index.js"]
