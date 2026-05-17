@@ -53,9 +53,16 @@ COPY --from=server-builder /app/apps/server/node_modules ./apps/server/node_modu
 
 USER bullmq
 
+ARG REDIS_URL=redis://localhost:6379
+ARG BULLSTUDIO_USERNAME
+ARG BULLSTUDIO_PASSWORD
+
 ENV NODE_ENV=production \
     PORT=3001 \
-    HOST=0.0.0.0
+    HOST=0.0.0.0 \
+    REDIS_URL=$REDIS_URL \
+    BULLMQ_USERNAME=$BULLSTUDIO_USERNAME \
+    BULLMQ_PASSWORD=$BULLSTUDIO_PASSWORD
 
 EXPOSE 3001
 
