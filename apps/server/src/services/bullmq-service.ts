@@ -312,7 +312,8 @@ class BullMQService {
     const job = await queue.getJob(jobId);
     if (!job) throw new Error(`Job ${jobId} not found`);
     if (job.repeatJobKey) {
-      await queue.add(`manual:${job.name}:${job.id}`, job.data, {
+      await queue.add(job.name, job.data, {
+        jobId: `manual:${job.name}:${job.id}`,
         priority: job.opts.priority,
         attempts: job.opts.attempts,
       });

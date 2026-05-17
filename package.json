@@ -1,14 +1,14 @@
 {
-  "name": "bullmq-studio",
+  "name": "bullmq-ui",
   "version": "1.0.0",
   "private": true,
   "workspaces": ["apps/*"],
   "scripts": {
     "dev": "concurrently \"bun run dev:server\" \"bun run dev:client\"",
-    "dev:client": "bun run --filter @bullmq-studio/client dev",
-    "dev:server": "bun run --filter @bullmq-studio/server dev",
-    "build": "bun run --filter @bullmq-studio/server build && bun run --filter @bullmq-studio/client build",
-    "start": "bun run --filter @bullmq-studio/server start",
+    "dev:client": "bun run --filter @bullmq-ui/client dev",
+    "dev:server": "bun run --filter @bullmq-ui/server dev",
+    "build": "bun run --filter @bullmq-ui/server build && bun run --filter @bullmq-ui/client build",
+    "start": "bun run --filter @bullmq-ui/server start",
     "typecheck": "bun run --filter '*' typecheck"
   },
   "devDependencies": {
