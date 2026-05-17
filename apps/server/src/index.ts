@@ -75,7 +75,7 @@ const HOST = process.env.HOST ?? "0.0.0.0";
 // Connect to Redis on startup
 ensureConnected()
   .then(() => {
-    console.log(`[bullmq-ui] Connected to Redis`);
+    console.log(`[bullmq-ui] Connected to Redis!`);
   })
   .catch((err: unknown) => {
     console.error(`[bullmq-ui] Redis connection failed:`, err);
