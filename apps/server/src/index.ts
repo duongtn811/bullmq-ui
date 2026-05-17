@@ -75,14 +75,14 @@ const HOST = process.env.HOST ?? "0.0.0.0";
 // Connect to Redis on startup
 ensureConnected()
   .then(() => {
-    console.log(`[bullmq-studio] Connected to Redis`);
+    console.log(`[bullmq-ui] Connected to Redis`);
   })
   .catch((err: unknown) => {
-    console.error(`[bullmq-studio] Redis connection failed:`, err);
-    console.warn(`[bullmq-studio] Server will retry on first request`);
+    console.error(`[bullmq-ui] Redis connection failed:`, err);
+    console.warn(`[bullmq-ui] Server will retry on first request`);
   });
 
-console.log(`[bullmq-studio] Server running at http://${HOST}:${PORT}`);
+console.log(`[bullmq-ui] Server running at http://${HOST}:${PORT}`);
 
 export default {
   port: PORT,
